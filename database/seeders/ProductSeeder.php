@@ -2,7 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Product;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class ProductSeeder extends Seeder
@@ -12,6 +13,11 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $users = User::all();
+
+        Product::factory()
+            ->recycle($users)
+            ->count(15)
+            ->create();
     }
 }
