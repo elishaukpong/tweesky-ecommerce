@@ -21,4 +21,8 @@ abstract class BaseRepository
         return $this->model->create($attributes);
     }
 
+    public function first(string $column, mixed $value): Model
+    {
+        return $this->model->where($column, $value)->firstOrFail();
+    }
 }

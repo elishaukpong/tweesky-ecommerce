@@ -16,7 +16,7 @@ class LoginController extends Controller
 
     public function __invoke(LoginRequest $request)
     {
-        $user = $this->authenticationService->login($request->validated());
+        $user = $this->authenticationService->authenticate($request->validated());
 
         return $this->success(__('User Logged In'),UserResource::make($user));
     }
