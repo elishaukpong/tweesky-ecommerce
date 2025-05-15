@@ -20,6 +20,6 @@ class RegistrationController extends Controller
     {
         $user = $this->authenticationService->register($request->validated());
 
-        return $this->success(__('User Registered'),UserResource::make($user));
+        return $this->created(__('User Registered'),UserResource::make($user));
     }
 }

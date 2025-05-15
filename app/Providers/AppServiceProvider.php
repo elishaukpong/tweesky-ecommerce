@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Exception\Handler;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\ServiceProvider;
 
@@ -13,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(ExceptionHandler::class, Handler::class);
     }
 
     /**

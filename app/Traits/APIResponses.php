@@ -14,6 +14,11 @@ trait APIResponses
         return $this->success($message, $data, $statusCode);
     }
 
+    public function created(string $message, mixed $data = []): JsonResponse
+    {
+        return $this->success($message, $data, Response::HTTP_CREATED);
+    }
+
     protected function success(string $message, mixed $data = [], int|string $statusCode = 200): JsonResponse
     {
         return response()->json([
@@ -23,13 +28,14 @@ trait APIResponses
         ],$statusCode);
     }
 
-    protected function error(string $message, int|string $statusCode): JsonResponse
+    protected function error(string $message, int|string $statusCode, mixed $errors = []): JsonResponse
     {
         $statusCode = $statusCode === 0 ? Response::HTTP_UNPROCESSABLE_ENTITY : $statusCode;
 
-        return response()->json([
+        return response()->json(array_filter([
             'status' => $statusCode,
             'message' => $message,
-        ],$statusCode);
+            'errors' => $errors
+        ]),$statusCode);
     }
 }

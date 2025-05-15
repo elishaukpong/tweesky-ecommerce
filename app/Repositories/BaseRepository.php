@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 abstract class BaseRepository
 {
@@ -14,5 +15,10 @@ abstract class BaseRepository
     }
 
     abstract protected function getModelClass(): Builder;
+
+    public function create(array $attributes): Model
+    {
+        return $this->model->create($attributes);
+    }
 
 }
