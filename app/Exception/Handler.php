@@ -6,6 +6,7 @@ namespace App\Exception;
 
 use App\Traits\APIResponses;
 use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Validation\ValidationException;
@@ -23,9 +24,11 @@ class Handler extends ExceptionHandler
                 return $this->error($e->getMessage(), $e->getCode());
             }
 
-            if ($e instanceof AuthorizationException) {
+            if ($e instanceof AuthorizationException || $e instanceof AuthenticationException) {
                 return $this->error($e->getMessage(), Response::HTTP_UNAUTHORIZED);
             }
+
+            return $this->error($e->getMessage(), $e->getCode());
         }
 
         return parent::render($request, $e);

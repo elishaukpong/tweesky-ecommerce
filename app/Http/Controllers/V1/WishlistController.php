@@ -6,21 +6,14 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Wishlist\StoreWishlistRequest;
 use App\Http\Requests\Wishlist\UpdateWishlistRequest;
 use App\Models\Wishlist;
+use Illuminate\Http\Request;
 
 class WishlistController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function index(Request $request)
     {
         //
     }
@@ -37,14 +30,6 @@ class WishlistController extends Controller
      * Display the specified resource.
      */
     public function show(Wishlist $wishlist)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Wishlist $wishlist)
     {
         //
     }

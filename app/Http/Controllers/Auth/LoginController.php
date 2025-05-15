@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Resources\UserResource;
 use App\Service\AuthenticationService;
+use Illuminate\Auth\AuthenticationException;
 
 class LoginController extends Controller
 {
@@ -14,6 +15,9 @@ class LoginController extends Controller
         //
     }
 
+    /**
+     * @throws AuthenticationException
+     */
     public function __invoke(LoginRequest $request)
     {
         $user = $this->authenticationService->authenticate($request->validated());
