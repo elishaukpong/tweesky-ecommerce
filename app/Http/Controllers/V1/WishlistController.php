@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\V1;
 
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Wishlist\StoreWishlistRequest;
+use App\Http\Requests\Wishlist\UpdateWishlistRequest;
 use App\Models\Wishlist;
-use App\Http\Requests\StoreWishlistRequest;
-use App\Http\Requests\UpdateWishlistRequest;
 
 class WishlistController extends Controller
 {
