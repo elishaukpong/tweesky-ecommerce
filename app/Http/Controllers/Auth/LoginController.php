@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Http\Resources\UserResource;
 use App\Service\AuthenticationService;
 use Illuminate\Auth\AuthenticationException;
+use Illuminate\Http\JsonResponse;
 
 class LoginController extends Controller
 {
@@ -18,10 +19,10 @@ class LoginController extends Controller
     /**
      * @throws AuthenticationException
      */
-    public function __invoke(LoginRequest $request)
+    public function __invoke(LoginRequest $request): JsonResponse
     {
         $user = $this->authenticationService->authenticate($request->validated());
 
-        return $this->success(__('User Logged In'),UserResource::make($user));
+        return $this->success(__('User logged In'),UserResource::make($user));
     }
 }

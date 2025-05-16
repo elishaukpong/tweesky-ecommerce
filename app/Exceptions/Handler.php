@@ -28,6 +28,10 @@ class Handler extends ExceptionHandler
                 return $this->error($e->getMessage(), Response::HTTP_UNAUTHORIZED);
             }
 
+            if($e instanceof ValidationException) {
+                return $this->invalidJson($request, $e);
+            }
+
             return $this->error($e->getMessage() . " - Code:" . $e->getCode(), Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
