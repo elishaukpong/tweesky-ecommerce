@@ -13,15 +13,13 @@ class ProductFilter extends QueryFilter
     {
         $priceRange = array_map('trim', explode(',', $value));
 
-        if (count($priceRange) === 2 && is_numeric($priceRange[0]) && is_numeric($priceRange[1])) {
+        if (count($priceRange) > 1) {
             return $this->builder->whereBetween('price', [
-                $priceRange[0] * 100,
-                $priceRange[1] * 100,
+                (int) $priceRange[0] * 100,
+                (int) $priceRange[1] * 100,
             ]);
         }
 
-        if (is_numeric($priceRange[0])) {
-            return $this->builder->where('price', $priceRange[0] * 100);
-        }
+        return $this->builder->where('price', (int) $priceRange[0] * 100);
     }
 }

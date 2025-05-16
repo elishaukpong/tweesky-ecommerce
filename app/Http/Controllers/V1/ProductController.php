@@ -37,7 +37,7 @@ class ProductController extends Controller
     {
         $product = $this->productService->create($request->validated());
 
-        return $this->ok(__('Products Created'), ProductResource::make($product));
+        return $this->created(__('Products Created'), ProductResource::make($product));
     }
 
     /**
