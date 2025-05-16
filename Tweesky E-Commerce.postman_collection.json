@@ -2,6 +2,7 @@
 	"info": {
 		"_postman_id": "f0998a8d-a503-4658-9352-2e1efac7ab4a",
 		"name": "Tweesky E-Commerce",
+		"description": "Tweesky is an elegant lean-version of an e-commerce platform which gives users the ability to add their favorite products to their wishlist for later purchase.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "37632424",
 		"_collection_link": "https://elishau.postman.co/workspace/9880f115-ec91-4d0a-8be7-70bd27eb7dc9/collection/37632424-f0998a8d-a503-4658-9352-2e1efac7ab4a?action=share&source=collection_link&creator=37632424"
@@ -52,7 +53,90 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Elisha Ukpong",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "elishaukpong+2@tweesky.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "tweesky2021%",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "tweesky2021%",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{TWEEKSY_BASE_URL}}/api/auth/register",
+									"host": [
+										"{{TWEEKSY_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 May 2025 12:19:48 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"message\": \"User Registered\",\n    \"data\": {\n        \"type\": \"users\",\n        \"id\": 9,\n        \"attributes\": {\n            \"name\": \"Elisha Ukpong\",\n            \"email\": \"elishaukpong+2@tweesky.com\",\n            \"token\": \"6|bPEJkpYVZM8ApFmoNwvLaKd9fjKJFZN8dKfmr5yH2dfa3889\",\n            \"createdAt\": \"2025-05-16T12:19:48.000000Z\",\n            \"updatedAt\": \"2025-05-16T12:19:48.000000Z\"\n        },\n        \"relationships\": []\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Login",
@@ -86,7 +170,88 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "email",
+											"value": "elishaukpong+2@tweesky.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "tweesky2021%",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{TWEEKSY_BASE_URL}}/api/auth/login",
+									"host": [
+										"{{TWEEKSY_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 May 2025 12:21:40 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"User logged In\",\n    \"data\": {\n        \"type\": \"users\",\n        \"id\": 9,\n        \"attributes\": {\n            \"name\": \"Elisha Ukpong\",\n            \"email\": \"elishaukpong+2@tweesky.com\",\n            \"token\": \"7|6uQLK3TyDmM76LeFtcvm4xMOGo5altTSTHgoXnSi2eec3256\",\n            \"createdAt\": \"2025-05-16T12:19:48.000000Z\",\n            \"updatedAt\": \"2025-05-16T12:19:48.000000Z\"\n        },\n        \"relationships\": []\n    }\n}"
+						}
+					]
 				}
 			]
 		},
@@ -132,7 +297,85 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "All Products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TWEEKSY_BASE_URL}}/api/v1/products",
+									"host": [
+										"{{TWEEKSY_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "John",
+											"disabled": true
+										},
+										{
+											"key": "price",
+											"value": "2000,1000000",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 May 2025 12:24:48 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Products Retrieved\",\n    \"data\": [\n        {\n            \"type\": \"products\",\n            \"id\": 1,\n            \"attributes\": {\n                \"name\": \"John Doe\",\n                \"slug\": \"qui-tempore-ut\",\n                \"description\": \"Technical Tests\",\n                \"price\": 100000,\n                \"stock_quantity\": 50,\n                \"createdAt\": \"2025-05-15T21:49:44.000000Z\",\n                \"updatedAt\": \"2025-05-16T00:50:10.000000Z\"\n            },\n            \"relationships\": {\n                \"createdBy\": {\n                    \"type\": \"users\",\n                    \"id\": 8,\n                    \"attributes\": {\n                        \"name\": \"Elisha Ukpong\",\n                        \"email\": \"elishaukpong+3@tweesky.com\",\n                        \"createdAt\": \"2025-05-15T22:49:36.000000Z\",\n                        \"updatedAt\": \"2025-05-15T22:49:36.000000Z\"\n                    },\n                    \"relationships\": []\n                }\n            }\n        }\n    ]\n}"
+						}
+					]
 				},
 				{
 					"name": "Create Product",
@@ -186,7 +429,90 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Create Product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "Milo Beverage",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "1000",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Nutritional Value",
+											"type": "text"
+										},
+										{
+											"key": "stock_quantity",
+											"value": "50",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{TWEEKSY_BASE_URL}}/api/v1/products",
+									"host": [
+										"{{TWEEKSY_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 May 2025 12:22:48 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"message\": \"Products Created\",\n    \"data\": {\n        \"type\": \"products\",\n        \"id\": 17,\n        \"attributes\": {\n            \"name\": \"Milo Beverage\",\n            \"slug\": \"milo-beverageej\",\n            \"description\": \"Nutritional Value\",\n            \"price\": 1000,\n            \"stock_quantity\": \"50\",\n            \"createdAt\": \"2025-05-16T12:22:48.000000Z\",\n            \"updatedAt\": \"2025-05-16T12:22:48.000000Z\"\n        },\n        \"relationships\": {\n            \"createdBy\": {\n                \"type\": \"users\",\n                \"id\": 8,\n                \"attributes\": {\n                    \"name\": \"Elisha Ukpong\",\n                    \"email\": \"elishaukpong+3@tweesky.com\",\n                    \"createdAt\": \"2025-05-15T22:49:36.000000Z\",\n                    \"updatedAt\": \"2025-05-15T22:49:36.000000Z\"\n                },\n                \"relationships\": []\n            }\n        }\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Show Product",
@@ -216,7 +542,74 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Show Product",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TWEEKSY_BASE_URL}}/api/v1/products/qui-tempore-ut",
+									"host": [
+										"{{TWEEKSY_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"qui-tempore-ut"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 May 2025 12:23:11 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Products Retrieved\",\n    \"data\": {\n        \"type\": \"products\",\n        \"id\": 1,\n        \"attributes\": {\n            \"name\": \"John Doe\",\n            \"slug\": \"qui-tempore-ut\",\n            \"description\": \"Technical Tests\",\n            \"price\": 100000,\n            \"stock_quantity\": 50,\n            \"createdAt\": \"2025-05-15T21:49:44.000000Z\",\n            \"updatedAt\": \"2025-05-16T00:50:10.000000Z\"\n        },\n        \"relationships\": {\n            \"createdBy\": {\n                \"type\": \"users\",\n                \"id\": 8,\n                \"attributes\": {\n                    \"name\": \"Elisha Ukpong\",\n                    \"email\": \"elishaukpong+3@tweesky.com\",\n                    \"createdAt\": \"2025-05-15T22:49:36.000000Z\",\n                    \"updatedAt\": \"2025-05-15T22:49:36.000000Z\"\n                },\n                \"relationships\": []\n            }\n        }\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Update Product",
@@ -271,7 +664,99 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Update Product",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "John Doe",
+											"type": "text"
+										},
+										{
+											"key": "price",
+											"value": "100000",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Technical Tests",
+											"type": "text"
+										},
+										{
+											"key": "stock_quantity",
+											"value": "50",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{TWEEKSY_BASE_URL}}/api/v1/products/qui-tempore-ut",
+									"host": [
+										"{{TWEEKSY_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"qui-tempore-ut"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 May 2025 12:26:34 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Products Updated\",\n    \"data\": {\n        \"type\": \"products\",\n        \"id\": 1,\n        \"attributes\": {\n            \"name\": \"John Doe\",\n            \"slug\": \"qui-tempore-ut\",\n            \"description\": \"Technical Tests\",\n            \"price\": 100000,\n            \"stock_quantity\": 50,\n            \"createdAt\": \"2025-05-15T21:49:44.000000Z\",\n            \"updatedAt\": \"2025-05-16T00:50:10.000000Z\"\n        },\n        \"relationships\": {\n            \"createdBy\": {\n                \"type\": \"users\",\n                \"id\": 8,\n                \"attributes\": {\n                    \"name\": \"Elisha Ukpong\",\n                    \"email\": \"elishaukpong+3@tweesky.com\",\n                    \"createdAt\": \"2025-05-15T22:49:36.000000Z\",\n                    \"updatedAt\": \"2025-05-15T22:49:36.000000Z\"\n                },\n                \"relationships\": []\n            }\n        }\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Delete Product",
@@ -301,7 +786,74 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Delete Product",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{TWEEKSY_BASE_URL}}/api/v1/products/qui-tempore-ut",
+									"host": [
+										"{{TWEEKSY_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"products",
+										"qui-tempore-ut"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 May 2025 12:26:47 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Product Deleted\",\n    \"data\": []\n}"
+						}
+					]
 				}
 			]
 		},
@@ -332,10 +884,90 @@
 								"api",
 								"v1",
 								"wishlists"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "tenetur",
+									"disabled": true
+								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "All Wishlists",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TWEEKSY_BASE_URL}}/api/v1/wishlists",
+									"host": [
+										"{{TWEEKSY_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wishlists"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "tenetur",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 May 2025 12:27:16 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Wishlists Retrieved\",\n    \"data\": [\n        {\n            \"type\": \"wishlists\",\n            \"id\": 16,\n            \"attributes\": {\n                \"note\": null,\n                \"createdAt\": \"2025-05-16T01:07:14.000000Z\",\n                \"updatedAt\": \"2025-05-16T01:07:14.000000Z\"\n            },\n            \"relationships\": {\n                \"user\": {\n                    \"type\": \"users\",\n                    \"id\": 8,\n                    \"attributes\": {\n                        \"name\": \"Elisha Ukpong\",\n                        \"email\": \"elishaukpong+3@tweesky.com\",\n                        \"createdAt\": \"2025-05-15T22:49:36.000000Z\",\n                        \"updatedAt\": \"2025-05-15T22:49:36.000000Z\"\n                    },\n                    \"relationships\": []\n                },\n                \"product\": {\n                    \"type\": \"products\",\n                    \"id\": 4,\n                    \"attributes\": {\n                        \"name\": \"praesentium tenetur assumenda\",\n                        \"slug\": \"praesentium-tenetur-assumenda\",\n                        \"description\": \"Rerum quasi aperiam perferendis illum. Et est voluptatem sed. Hic occaecati perferendis veritatis amet est cupiditate. Eligendi occaecati laboriosam voluptas voluptatum nihil voluptas debitis inventore.\",\n                        \"price\": 77172,\n                        \"stock_quantity\": 59,\n                        \"createdAt\": \"2025-05-15T21:49:44.000000Z\",\n                        \"updatedAt\": \"2025-05-15T21:49:44.000000Z\"\n                    },\n                    \"relationships\": {\n                        \"createdBy\": {\n                            \"type\": \"users\",\n                            \"id\": 3,\n                            \"attributes\": {\n                                \"name\": \"Jessie Fisher\",\n                                \"email\": \"lauriane.price@example.net\",\n                                \"createdAt\": \"2025-05-15T21:49:44.000000Z\",\n                                \"updatedAt\": \"2025-05-15T21:49:44.000000Z\"\n                            },\n                            \"relationships\": []\n                        }\n                    }\n                }\n            }\n        }\n    ]\n}"
+						}
+					]
 				},
 				{
 					"name": "Create Wishlist",
@@ -357,7 +989,7 @@
 							"urlencoded": [
 								{
 									"key": "product_id",
-									"value": "5",
+									"value": "1",
 									"type": "text"
 								},
 								{
@@ -379,7 +1011,80 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Create Wishlist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "product_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "note",
+											"value": "Hello there again",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{TWEEKSY_BASE_URL}}/api/v1/wishlists",
+									"host": [
+										"{{TWEEKSY_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wishlists"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 May 2025 12:27:57 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 201,\n    \"message\": \"Wishlist Created\",\n    \"data\": {\n        \"type\": \"wishlists\",\n        \"id\": 19,\n        \"attributes\": {\n            \"note\": \"Hello there again\",\n            \"createdAt\": \"2025-05-16T12:27:57.000000Z\",\n            \"updatedAt\": \"2025-05-16T12:27:57.000000Z\"\n        },\n        \"relationships\": {\n            \"user\": {\n                \"type\": \"users\",\n                \"id\": 8,\n                \"attributes\": {\n                    \"name\": \"Elisha Ukpong\",\n                    \"email\": \"elishaukpong+3@tweesky.com\",\n                    \"createdAt\": \"2025-05-15T22:49:36.000000Z\",\n                    \"updatedAt\": \"2025-05-15T22:49:36.000000Z\"\n                },\n                \"relationships\": []\n            },\n            \"product\": null\n        }\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Show Wishlist",
@@ -397,7 +1102,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{TWEEKSY_BASE_URL}}/api/v1/wishlists/17",
+							"raw": "{{TWEEKSY_BASE_URL}}/api/v1/wishlists/18",
 							"host": [
 								"{{TWEEKSY_BASE_URL}}"
 							],
@@ -405,11 +1110,78 @@
 								"api",
 								"v1",
 								"wishlists",
-								"17"
+								"18"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Show Wishlist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{TWEEKSY_BASE_URL}}/api/v1/wishlists/18",
+									"host": [
+										"{{TWEEKSY_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wishlists",
+										"18"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 May 2025 12:28:22 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Wishlist retrieved\",\n    \"data\": {\n        \"type\": \"wishlists\",\n        \"id\": 18,\n        \"attributes\": {\n            \"note\": \"Hello there again\",\n            \"createdAt\": \"2025-05-16T01:13:13.000000Z\",\n            \"updatedAt\": \"2025-05-16T01:13:13.000000Z\"\n        },\n        \"relationships\": {\n            \"user\": {\n                \"type\": \"users\",\n                \"id\": 8,\n                \"attributes\": {\n                    \"name\": \"Elisha Ukpong\",\n                    \"email\": \"elishaukpong+3@tweesky.com\",\n                    \"createdAt\": \"2025-05-15T22:49:36.000000Z\",\n                    \"updatedAt\": \"2025-05-15T22:49:36.000000Z\"\n                },\n                \"relationships\": []\n            },\n            \"product\": {\n                \"type\": \"products\",\n                \"id\": 5,\n                \"attributes\": {\n                    \"name\": \"non eligendi dicta\",\n                    \"slug\": \"non-eligendi-dicta\",\n                    \"description\": null,\n                    \"price\": 73302,\n                    \"stock_quantity\": 67,\n                    \"createdAt\": \"2025-05-15T21:49:44.000000Z\",\n                    \"updatedAt\": \"2025-05-15T21:49:44.000000Z\"\n                },\n                \"relationships\": {\n                    \"createdBy\": {\n                        \"type\": \"users\",\n                        \"id\": 3,\n                        \"attributes\": {\n                            \"name\": \"Jessie Fisher\",\n                            \"email\": \"lauriane.price@example.net\",\n                            \"createdAt\": \"2025-05-15T21:49:44.000000Z\",\n                            \"updatedAt\": \"2025-05-15T21:49:44.000000Z\"\n                        },\n                        \"relationships\": []\n                    }\n                }\n            }\n        }\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Update Wishlist",
@@ -437,7 +1209,7 @@
 							]
 						},
 						"url": {
-							"raw": "{{TWEEKSY_BASE_URL}}/api/v1/wishlists/17",
+							"raw": "{{TWEEKSY_BASE_URL}}/api/v1/wishlists/18",
 							"host": [
 								"{{TWEEKSY_BASE_URL}}"
 							],
@@ -445,11 +1217,88 @@
 								"api",
 								"v1",
 								"wishlists",
-								"17"
+								"18"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Update Wishlist",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "note",
+											"value": "Lets get the role",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{TWEEKSY_BASE_URL}}/api/v1/wishlists/18",
+									"host": [
+										"{{TWEEKSY_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wishlists",
+										"18"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 May 2025 12:28:54 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Wishlist Updated\",\n    \"data\": {\n        \"type\": \"wishlists\",\n        \"id\": 18,\n        \"attributes\": {\n            \"note\": \"Lets get the role\",\n            \"createdAt\": \"2025-05-16T01:13:13.000000Z\",\n            \"updatedAt\": \"2025-05-16T12:28:54.000000Z\"\n        },\n        \"relationships\": {\n            \"user\": {\n                \"type\": \"users\",\n                \"id\": 8,\n                \"attributes\": {\n                    \"name\": \"Elisha Ukpong\",\n                    \"email\": \"elishaukpong+3@tweesky.com\",\n                    \"createdAt\": \"2025-05-15T22:49:36.000000Z\",\n                    \"updatedAt\": \"2025-05-15T22:49:36.000000Z\"\n                },\n                \"relationships\": []\n            },\n            \"product\": {\n                \"type\": \"products\",\n                \"id\": 5,\n                \"attributes\": {\n                    \"name\": \"non eligendi dicta\",\n                    \"slug\": \"non-eligendi-dicta\",\n                    \"description\": null,\n                    \"price\": 73302,\n                    \"stock_quantity\": 67,\n                    \"createdAt\": \"2025-05-15T21:49:44.000000Z\",\n                    \"updatedAt\": \"2025-05-15T21:49:44.000000Z\"\n                },\n                \"relationships\": {\n                    \"createdBy\": {\n                        \"type\": \"users\",\n                        \"id\": 3,\n                        \"attributes\": {\n                            \"name\": \"Jessie Fisher\",\n                            \"email\": \"lauriane.price@example.net\",\n                            \"createdAt\": \"2025-05-15T21:49:44.000000Z\",\n                            \"updatedAt\": \"2025-05-15T21:49:44.000000Z\"\n                        },\n                        \"relationships\": []\n                    }\n                }\n            }\n        }\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Delete Wishlist",
@@ -467,7 +1316,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{TWEEKSY_BASE_URL}}/api/v1/wishlists/17",
+							"raw": "{{TWEEKSY_BASE_URL}}/api/v1/wishlists/18",
 							"host": [
 								"{{TWEEKSY_BASE_URL}}"
 							],
@@ -475,11 +1324,78 @@
 								"api",
 								"v1",
 								"wishlists",
-								"17"
+								"18"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Delete Wishlist",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{TWEEKSY_BASE_URL}}/api/v1/wishlists/18",
+									"host": [
+										"{{TWEEKSY_BASE_URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"wishlists",
+										"18"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.2"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.19"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 16 May 2025 12:29:18 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Wishlist Removed\",\n    \"data\": []\n}"
+						}
+					]
 				}
 			]
 		}
