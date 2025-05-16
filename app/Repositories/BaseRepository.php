@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 use App\Contracts\Filterable;
-use App\Exception\ModelCannotBeFilteredException;
+use App\Exceptions\ModelCannotBeFilteredException;
 use App\Http\Filters\QueryFilter;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
@@ -35,6 +35,11 @@ abstract class BaseRepository
     public function first(string $column, mixed $value): Model
     {
         return $this->model->where($column, $value)->firstOrFail();
+    }
+
+    public function exists(array $attributes): bool
+    {
+        return $this->model->where($attributes)->exists();
     }
 
     public function paginateWithFilter(QueryFilter $filter, int $count = 15): LengthAwarePaginator

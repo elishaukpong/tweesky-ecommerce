@@ -21,7 +21,7 @@ class WishlistPolicy
      */
     public function view(User $user, Wishlist $wishlist): bool
     {
-        return false;
+        return $user->id === $wishlist->user_id;
     }
 
     /**
@@ -29,7 +29,7 @@ class WishlistPolicy
      */
     public function create(User $user): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -37,7 +37,7 @@ class WishlistPolicy
      */
     public function update(User $user, Wishlist $wishlist): bool
     {
-        return false;
+        return $user->id === $wishlist->user_id;
     }
 
     /**
@@ -45,22 +45,7 @@ class WishlistPolicy
      */
     public function delete(User $user, Wishlist $wishlist): bool
     {
-        return false;
+        return $user->id === $wishlist->user_id;
     }
 
-    /**
-     * Determine whether the user can restore the model.
-     */
-    public function restore(User $user, Wishlist $wishlist): bool
-    {
-        return false;
-    }
-
-    /**
-     * Determine whether the user can permanently delete the model.
-     */
-    public function forceDelete(User $user, Wishlist $wishlist): bool
-    {
-        return false;
-    }
 }

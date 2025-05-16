@@ -2,17 +2,16 @@
 
 namespace App\Http\Requests\Wishlist;
 
-use App\Models\Wishlist;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreWishlistRequest extends FormRequest
+class DeleteWishlistRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return auth()->user()->can('create', Wishlist::class);
+        return auth()->user()->can('delete', request()->route('wishlist'));
     }
 
     /**
@@ -23,8 +22,7 @@ class StoreWishlistRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'product_id' => 'required|exists:products,id',
-            'note' => 'sometimes|string',
+            //
         ];
     }
 }

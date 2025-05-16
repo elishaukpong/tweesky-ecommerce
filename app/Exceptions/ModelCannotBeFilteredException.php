@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Exception;
+namespace App\Exceptions;
 
 use RuntimeException;
 use Symfony\Component\HttpFoundation\Response;

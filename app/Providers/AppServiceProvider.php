@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Exception\Handler;
+use App\Exceptions\Handler;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Resources\Json\JsonResource;

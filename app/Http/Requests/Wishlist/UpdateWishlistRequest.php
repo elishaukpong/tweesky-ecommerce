@@ -11,7 +11,7 @@ class UpdateWishlistRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->user()->can('update', request()->route('wishlist'));
     }
 
     /**
@@ -22,7 +22,7 @@ class UpdateWishlistRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'note' => 'sometimes|string'
         ];
     }
 }

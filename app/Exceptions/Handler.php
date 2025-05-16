@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Exception;
+namespace App\Exceptions;
 
 use App\Traits\APIResponses;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -28,7 +28,7 @@ class Handler extends ExceptionHandler
                 return $this->error($e->getMessage(), Response::HTTP_UNAUTHORIZED);
             }
 
-            return $this->error($e->getMessage() . "Code" . $e->getCode(), Response::HTTP_UNPROCESSABLE_ENTITY);
+            return $this->error($e->getMessage() . " - Code:" . $e->getCode(), Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
         return parent::render($request, $e);
