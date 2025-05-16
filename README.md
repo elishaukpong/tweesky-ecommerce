@@ -15,7 +15,7 @@ This Project supports:
 
 
 
-## Endpoints
+## API Documentation
 
 There are two options to go with regards API Endpoints documentation for the project.
 In the root folder, I have added a postman collection file which you can import into
