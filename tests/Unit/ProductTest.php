@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests\Unit;
+
 use App\Casts\MoneyCast;
 use App\Models\Product;
 use App\Models\User;

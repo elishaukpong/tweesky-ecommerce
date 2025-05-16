@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests\Unit;
+
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Wishlist;
