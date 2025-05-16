@@ -50,4 +50,4 @@ running `php artisan serve`
 To test the project, run `php artisan test`
 
 ### Errata 
-Everything should go smoothly, but if it doesn't - create an issue or shoot me an email: ishukpong418@gmail.comg
+Everything should go smoothly, but if it doesn't - create an issue or shoot me an email: ishukpong418@gmail.com
