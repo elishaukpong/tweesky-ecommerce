@@ -46,6 +46,8 @@ is same in your env, if not, update to match.
 - switch the value of the environment variable `TWEEKSY_BASE_URL` to point to the url of the project gotten from 
 running `php artisan serve`
 
+### Testing
+To test the project, run `php artisan test`
 
 ### Errata 
 Everything should go smoothly, but if it doesn't - create an issue or shoot me an email: ishukpong418@gmail.comg
