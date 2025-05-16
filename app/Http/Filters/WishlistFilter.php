@@ -8,4 +8,9 @@ class WishlistFilter extends QueryFilter
     {
         return $this->builder->where('user_id', $value);
     }
+
+    public function name($value)
+    {
+        return $this->builder->whereHas('product', fn ($query) => $query->where('name', 'like', '%' . $value . '%'));
+    }
 }
