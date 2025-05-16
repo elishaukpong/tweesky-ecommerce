@@ -41,7 +41,7 @@ class WishlistController extends Controller
     {
         $wishlist = $this->wishlistService->create($request->validated());
 
-        return $this->ok(__('Wishlist Created'), WishlistResource::make($wishlist));
+        return $this->created(__('Wishlist Created'), WishlistResource::make($wishlist));
     }
 
     /**

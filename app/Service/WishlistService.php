@@ -17,7 +17,7 @@ class WishlistService
 
     public function getAll(WishlistFilter $filter): LengthAwarePaginator
     {
-        return $this->wishlistRepository->paginateWithFilter($filter,2);
+        return $this->wishlistRepository->paginateWithFilter($filter);
     }
 
     public function create(array $attributes): Wishlist
