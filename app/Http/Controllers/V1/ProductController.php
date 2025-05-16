@@ -4,6 +4,7 @@ namespace App\Http\Controllers\V1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Filters\ProductFilter;
+use App\Http\Requests\Product\DeleteProductRequest;
 use App\Http\Requests\Product\StoreProductRequest;
 use App\Http\Requests\Product\UpdateProductRequest;
 use App\Http\Resources\ProductResource;
@@ -32,15 +33,17 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreProductRequest $request)
+    public function store(StoreProductRequest $request): JsonResponse
     {
-        //
+        $product = $this->productService->create($request->validated());
+
+        return $this->ok(__('Products Created'), ProductResource::make($product));
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Product $product)
+    public function show(Product $product): JsonResponse
     {
         return $this->ok(__('Products Retrieved'), ProductResource::make($product));
     }
@@ -48,16 +51,20 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateProductRequest $request, Product $product)
+    public function update(UpdateProductRequest $request, Product $product): JsonResponse
     {
-        //
+        $product = $this->productService->update($product, $request->validated());
+
+        return $this->ok(__('Products Updated'), ProductResource::make($product));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Product $product)
+    public function destroy(DeleteProductRequest $request, Product $product): JsonResponse
     {
-        //
+        $this->productService->delete($product);
+
+        return $this->ok(__('Product Deleted'));
     }
 }

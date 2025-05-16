@@ -14,6 +14,18 @@ class WishlistResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'type' => 'wishlists',
+            'id' => $this->id,
+            'attributes' => [
+                'note' => $this->note,
+                'createdAt' => $this->created_at,
+                'updatedAt' => $this->updated_at
+            ],
+            'relationships' => [
+                'user' => UserResource::make($this->user),
+                'product' => ProductResource::make($this->product),
+            ]
+        ];
     }
 }

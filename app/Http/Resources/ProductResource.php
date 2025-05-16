@@ -14,6 +14,22 @@ class ProductResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'type' => 'products',
+            'id' => $this->id,
+            'attributes' => [
+                'name' => $this->name,
+                'slug' => $this->slug,
+                'description' => $this->description,
+                'price' => $this->price,
+                'stock_quantity' => $this->stock_quantity,
+                'createdAt' => $this->created_at,
+                'updatedAt' => $this->updated_at
+            ],
+            'relationships' => [
+                'createdBy' => UserResource::make($this->createdBy),
+                'wishlists' => WishlistResource::collection($this->whenLoaded('wishlists')),
+            ]
+        ];
     }
 }

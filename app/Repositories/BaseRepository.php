@@ -2,8 +2,8 @@
 
 namespace App\Repositories;
 
-use App\Contract\Filterable;
-use App\Exceptions\Models\ModelCannotBeFilteredException;
+use App\Contracts\Filterable;
+use App\Exception\ModelCannotBeFilteredException;
 use App\Http\Filters\QueryFilter;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
@@ -25,12 +25,19 @@ abstract class BaseRepository
         return $this->model->create($attributes);
     }
 
+    public function update(Model $model, array $attributes): Model
+    {
+        $model->update($attributes);
+
+        return $model->fresh();
+    }
+
     public function first(string $column, mixed $value): Model
     {
         return $this->model->where($column, $value)->firstOrFail();
     }
 
-    public function paginateWithFilter(QueryFilter $filter, int $count): LengthAwarePaginator
+    public function paginateWithFilter(QueryFilter $filter, int $count = 15): LengthAwarePaginator
     {
         return $this->setFilter($filter)->paginate($count);
     }

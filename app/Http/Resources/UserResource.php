@@ -2,7 +2,6 @@
 
 namespace App\Http\Resources;
 
-use App\Http\Resources\API\v1\School\SchoolResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -21,7 +20,7 @@ class UserResource extends JsonResource
             'attributes' => [
                 'name' => $this->name,
                 'email' => $this->email,
-                'token' => $this->token,
+                'token' => $this->when($this->token, fn() => $this->token),
                 'createdAt' => $this->created_at,
                 'updatedAt' => $this->updated_at
             ],

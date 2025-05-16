@@ -4,14 +4,14 @@ namespace App\Http\Requests\Product;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateProductRequest extends FormRequest
+class DeleteProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return auth()->user()->can('update', request()->route('product'));
+        return auth()->user()->can('delete', request()->route('product'));
     }
 
     /**
@@ -22,10 +22,7 @@ class UpdateProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'sometimes|string',
-            'description' => 'sometimes|string',
-            'stock_quantity' => 'sometimes|numeric',
-            'price' => 'sometimes|numeric',
+            //
         ];
     }
 }

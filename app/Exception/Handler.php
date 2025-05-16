@@ -28,7 +28,7 @@ class Handler extends ExceptionHandler
                 return $this->error($e->getMessage(), Response::HTTP_UNAUTHORIZED);
             }
 
-            return $this->error($e->getMessage(), $e->getCode());
+            return $this->error($e->getMessage() . "Code" . $e->getCode(), Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
         return parent::render($request, $e);
