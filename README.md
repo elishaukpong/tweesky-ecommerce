@@ -14,7 +14,6 @@ This Project supports:
 - Unit + Feature Tests
 
 
-
 ## API Documentation
 
 There are two options to go with regards API Endpoints documentation for the project.
@@ -46,3 +45,7 @@ is same in your env, if not, update to match.
 - Now you can go over to the API documentation on Postman
 - switch the value of the environment variable `TWEEKSY_BASE_URL` to point to the url of the project gotten from 
 running `php artisan serve`
+
+
+### Errata 
+Everything should go smoothly, but if it doesn't - create an issue or shoot me an email: ishukpong418@gmail.comg
