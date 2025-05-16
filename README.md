@@ -18,7 +18,8 @@ This Project supports:
 
 There are two options to go with regards API Endpoints documentation for the project.
 In the root folder, I have added a postman collection file which you can import into
-your local postman instance or you can utilize the publicy available documentation endpoint:
+your local postman instance or you can utilize the publicly available postman documentation endpoint 
+(Postman might be down here and there, so best to import the collection file):
 
 
 [Available Here](https://documenter.getpostman.com/view/37632424/2sB2qWGimG).
