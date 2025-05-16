@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Product;
 
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateProductRequest extends FormRequest
@@ -27,5 +28,10 @@ class UpdateProductRequest extends FormRequest
             'stock_quantity' => 'sometimes|numeric',
             'price' => 'sometimes|numeric',
         ];
+    }
+
+    protected function failedAuthorization()
+    {
+        throw new AuthorizationException(__('Unauthorized! You can only update a product created by you!'));
     }
 }

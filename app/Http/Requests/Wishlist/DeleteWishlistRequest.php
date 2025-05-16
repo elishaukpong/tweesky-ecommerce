@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Wishlist;
 
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Http\FormRequest;
 
 class DeleteWishlistRequest extends FormRequest
@@ -24,5 +25,10 @@ class DeleteWishlistRequest extends FormRequest
         return [
             //
         ];
+    }
+
+    protected function failedAuthorization()
+    {
+        throw new AuthorizationException(__('Unauthorized! You can only delete a wishlist created by you!'));
     }
 }

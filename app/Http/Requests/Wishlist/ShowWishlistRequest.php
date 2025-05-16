@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Wishlist;
 
 use App\Models\Wishlist;
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ShowWishlistRequest extends FormRequest
@@ -25,5 +26,10 @@ class ShowWishlistRequest extends FormRequest
         return [
             //
         ];
+    }
+
+    protected function failedAuthorization()
+    {
+        throw new AuthorizationException(__('Unauthorized! You can only view a wishlist created by you!'));
     }
 }

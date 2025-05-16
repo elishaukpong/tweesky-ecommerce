@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Wishlist;
 
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateWishlistRequest extends FormRequest
@@ -24,5 +25,10 @@ class UpdateWishlistRequest extends FormRequest
         return [
             'note' => 'sometimes|string'
         ];
+    }
+
+    protected function failedAuthorization()
+    {
+        throw new AuthorizationException(__('Unauthorized! You can only update a wishlist created by you!'));
     }
 }

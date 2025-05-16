@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Product;
 
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Foundation\Http\FormRequest;
 
 class DeleteProductRequest extends FormRequest
@@ -24,5 +25,10 @@ class DeleteProductRequest extends FormRequest
         return [
             //
         ];
+    }
+
+    protected function failedAuthorization()
+    {
+        throw new AuthorizationException(__('Unauthorized! You can only delete a product created by you!'));
     }
 }
