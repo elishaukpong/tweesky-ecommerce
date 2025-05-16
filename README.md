@@ -1,7 +1,19 @@
-## About Tweesky
+# About Tweesky
 
 Tweesky is an elegant lean-version of an e-commerce platform which gives users the ability to add their 
 favorite products to their wishlist for later purchase.
+
+## Project Details
+
+This Project supports:
+- User Authentication
+- Product CRUD
+- Wishlist CRUD
+- Filtering
+- Authorization
+- Unit + Feature Tests
+
+
 
 ## Endpoints
 
@@ -34,7 +46,3 @@ is same in your env, if not, update to match.
 - Now you can go over to the API documentation on Postman
 - switch the value of the environment variable `TWEEKSY_BASE_URL` to point to the url of the project gotten from 
 running `php artisan serve`
-
-
-## Project Details
-
