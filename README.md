@@ -43,7 +43,8 @@ To set this application you can use either an instance of mysql or SQLite - I us
 is same in your env, if not, update to match.
 - Run migrations and seeder `php artisan migrate --seed`
 - Run `php artisan serve` to start up your application.
-- Now you can go over to the API documentation on Postman
+- Now you can go over to the API documentation on Postman 
+(I am hoping you imported the collection into your instance of postman - collection can be found on the root of the project)
 - switch the value of the environment variable `TWEEKSY_BASE_URL` to point to the url of the project gotten from 
 running `php artisan serve`
 
