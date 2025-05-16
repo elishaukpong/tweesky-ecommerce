@@ -40,4 +40,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Wishlist::class);
     }
+
+    public function products(): HasMany
+    {
+        return $this->hasMany(Product::class,'created_by');
+    }
 }

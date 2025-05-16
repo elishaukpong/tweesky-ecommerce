@@ -11,7 +11,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Wishlist extends Model implements Filterable
 {
+
     use HasFactory, SoftDeletes, FilterableScope;
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
